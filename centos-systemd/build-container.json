@@ -1,0 +1,31 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "centos:latest",
+      "commit": true,
+      "author": "andrepearce22@gmail.com",
+      "changes": [
+        "LABEL maintainer=\"andrepearce22@gmail.com\"",
+        "ENV container docker",
+        "VOLUME /sys/fs/cgroup",
+        "CMD [\"/sbin/init\"]"
+      ]
+    }
+  ],
+
+  "provisioners": [
+    {
+      "type": "ansible",
+      "playbook_file": "./provisioner/main.yaml"
+    }
+  ],
+
+  "post-processors": [
+    {
+      "type": "docker-tag",
+      "repository": "andrepearce/centos-systemd",
+      "tag": "0.1"
+    }
+  ]
+}

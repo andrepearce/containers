@@ -1,0 +1,10 @@
+- name: Provision a systemd enabled CentOS container
+  hosts: all
+
+  roles:
+    # Install required packages and clean package manager cache
+    - packages
+    # Mask unecessary services and systemd setup
+    # - systemd-setup
+    # Configure jounrald log forwarding
+    # - journald-setup
