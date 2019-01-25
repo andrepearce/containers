@@ -1,0 +1,2 @@
+- name: Forward to console
+  lineinfile: dest=/etc/systemd/journald.conf line="ForwardToConsole=yes"

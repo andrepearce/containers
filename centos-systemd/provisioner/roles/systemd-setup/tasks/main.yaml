@@ -1,0 +1,5 @@
+- name: Mask
+  command: systemctl mask dev-mqueue.mount systemd-machine-id-commit.service dev-hugepages.mount sys-kernel-config.mount sys-kernel-debug.mount sys-fs-fuse-connections.mount display-manager.service graphical.target systemd-logind.service systemd-remount-fs.service
+
+- name: Set default target
+  command: systemctl set-default multi-user.target

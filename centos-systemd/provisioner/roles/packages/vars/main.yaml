@@ -1,5 +1,0 @@
-# List of required packages
-packages:
-  - initscripts
-
-yum_cache_file: /var/cache/yum
